@@ -1,0 +1,203 @@
+@font-face {
+  font-family: Axaxax;
+  src: url("fonts/axaxax-bd.otf");
+}
+@font-face {
+  font-family: Hanzel;
+  src: url("fonts/Hanzel-Bold.ttf");
+}
+
+body{
+  background-color: #232A36;
+  color: white;
+  font-family: 'Lucida Sans';
+  font-style: oblique;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  background-image: url("img/suguru-geto-hd-wallpaper.jpg");
+  background-size: cover;
+  margin-top: 20px;
+  max-width: 1000px;
+  width: 100%;
+  height: 200px;
+  position: absolute;
+}
+.transparent-layer{
+  background-color: rgba(0,0,0,0.6);
+  height: 100%;
+  position: relative;
+}
+
+h1{
+  font-family: Hansel;
+  font-size: 25pt;
+  text-decoration: underline;
+  margin: 0;
+}
+h2{
+  font-family: Axaxax;
+  margin: 0;
+  font-size: small;
+}
+
+p{
+  font-size: 9pt;
+  text-align: justify;
+}
+
+/** left styles*/
+.left{
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: 50%;
+  padding-left: 5%;
+  padding-block: 2.5%;
+}
+
+.button {
+  background-color: #EB128D;
+  width: 80px;
+  text-align: center;
+  height: 14px;
+  font-size: 8pt;
+  padding: 8px 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+.button::after{
+  content: "";
+  left: 0;
+  top: 0;
+  width: 0px;
+  height: 30px;
+  font-size: inherit;
+  color: transparent;
+  position: absolute;
+  background-color: white;
+  transition: width 0.4s linear;
+}
+
+.button:hover::after{
+  content: "Start!";
+  color: #EB128D;
+  width: 105px;
+  height: 30px;
+  line-height: 30px;
+}
+.button:hover{
+  color: transparent;
+}
+
+/*** right styles */
+
+.right{
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 42%;
+}
+.satoru-image {
+  background-image: url("img/Satoru-mark.png");
+  width: 80%;
+  height: 90%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10px auto;
+  position: relative;
+  cursor: pointer;
+}
+.satoru-image::before, .satoru-image::after{
+  content: "";
+  width: 65px;
+  height: 65px;
+  background-size: contain;
+  position: absolute;
+  transition: left 1s linear,
+              top 1s linear;
+}
+
+.satoru-image::before{
+  top: 100px;
+  left: 50px;
+}
+.satoru-image::after{
+  top: 100px;
+  right: 70px;
+}
+.satoru-image:hover::before{
+  top: 128px;
+  left: -10px;
+  background-image: url("img/tag-yuji.png");
+  background-repeat: no-repeat;
+}
+.satoru-image:hover::after{
+  top: -10px;
+  right: -8px;
+  background-image: url("img/tag-megumi.png");
+  background-repeat: no-repeat;
+}
+/** after alternativo*/
+.satoru-image>span{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.satoru-image>span::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: width 1s linear,
+  height 1s linear;
+}
+.satoru-image>span:hover::after{
+  background-image: url("img/tag-nobara.png");
+  width: 60px;
+  height: 60px;
+  left: -10px;
+  top: -10px;
+}
+@media (min-width: 700px) {
+  .content {
+    width: 100%;
+    height: 300px;
+  }
+  .left {
+    width: 30%;
+    padding-block: 7%;
+    padding-left: 20%;
+  }
+  .right{
+    width: 25%;
+    padding-right: 20%;
+  }
+  .satoru-image:hover::before{
+    width: 90px;
+    height: 90px;
+    top: 195px;
+    left: -20px;
+  }
+  .satoru-image:hover::after{
+    width: 90px;
+    height: 90px;
+    top: -10px;
+    right: -40px;
+  }
+  .satoru-image>span:hover::after{
+    width: 80px;
+    height: 80px;
+    top: -10px;
+    left: -20px;
+  }
+}
